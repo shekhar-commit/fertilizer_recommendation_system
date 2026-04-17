@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f1f5f9;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #38bdf8;
+        }
+        
+        .result-item {
+            background: #334155;
+            padding: 12px 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .result-item span {
+            font-weight: 500;
+        }
+        
+        .label {
+            color: #94a3b8;
+        }
+        
+        .value {
+            color: #f8fafc;
+            font-weight: bold;
+        }
+        
+        .advice {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1e293b;
+            border-left: 5px solid #38bdf8;
+            border-radius: 10px;
+            line-height: 1.5;
+        }
+        
+        a {
+            display: block;
+            margin-top: 25px;
+            text-align: center;
+            text-decoration: none;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        a:hover {
+            background: #0ea5e9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+
+            <h2>🌾 Recommendation Result</h2>
+
+            <div class="result-item">
+                <span class="label">🌱 Fertilizer</span>
+                <span class="value">{{ result.fertilizer }}</span>
+            </div>
+
+            <div class="result-item">
+                <span class="label">📦 Quantity</span>
+                <span class="value">{{ result.quantity }}</span>
+            </div>
+
+            <div class="result-item">
+                <span class="label">⏰ When to Apply</span>
+                <span class="value">{{ result.timing }}</span>
+            </div>
+
+            <div class="result-item">
+                <span class="label">⚙️ Method</span>
+                <span class="value">{{ result.method }}</span>
+            </div>
+
+            <div class="result-item">
+                <span class="label">📊 Expected Yield</span>
+                <span class="value">{{ result.yield }}</span>
+            </div>
+
+            <div class="advice">
+                💡 <b>Advice:</b><br> {{ result.advice }}
+            </div>
+
+            <a href="/">⬅ Back to Form</a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

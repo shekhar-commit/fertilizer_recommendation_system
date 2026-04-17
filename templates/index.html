@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fertilizer Recommendation</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f1f5f9;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+        
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 8px;
+            background: #334155;
+            color: #fff;
+            font-size: 14px;
+        }
+        
+        input:focus,
+        select:focus {
+            outline: none;
+            box-shadow: 0 0 5px #38bdf8;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 10px;
+            background: #38bdf8;
+            color: #0f172a;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: #0ea5e9;
+        }
+        
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .row div {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>🌾 Smart Fertilizer Recommendation</h2>
+
+        <form action="/predict" method="post">
+
+            <label>Soil Type</label>
+            <select name="soil">
+            <option>Loamy</option>
+            <option>Sandy</option>
+            <option>Clay</option>
+            <option>Silty</option>
+            <option>Peaty</option>
+        </select>
+
+            <label>Crop</label>
+            <input type="text" name="crop" placeholder="Enter crop name" required>
+
+            <div class="row">
+                <div>
+                    <label>Growth Stage</label>
+                    <select name="stage">
+                    <option>Seedling</option>
+                    <option>Vegetative</option>
+                    <option>Flowering</option>
+                    <option>Harvesting</option>
+                </select>
+                </div>
+
+                <div>
+                    <label>Season</label>
+                    <select name="season">
+                    <option>Kharif</option>
+                    <option>Rabi</option>
+                    <option>Zaid</option>
+                </select>
+                </div>
+            </div>
+
+            <label>Agro-Climatic Zone</label>
+            <select name="zone">
+            <option>Arid</option>
+            <option>Semi-Arid</option>
+            <option>Humid</option>
+            <option>Sub-Humid</option>
+        </select>
+
+            <div class="row">
+                <div>
+                    <label>N (Nitrogen)</label>
+                    <input type="number" name="N" required>
+                </div>
+                <div>
+                    <label>P (Phosphorus)</label>
+                    <input type="number" name="P" required>
+                </div>
+                <div>
+                    <label>K (Potassium)</label>
+                    <input type="number" name="K" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label>pH</label>
+                    <input type="number" step="0.1" name="pH" required>
+                </div>
+                <div>
+                    <label>Temperature (°C)</label>
+                    <input type="number" name="temp" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label>Humidity (%)</label>
+                    <input type="number" name="humidity" required>
+                </div>
+                <div>
+                    <label>Rainfall (mm)</label>
+                    <input type="number" name="rainfall" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div>
+                    <label>Last Fertilizer (days ago)</label>
+                    <input type="number" name="last_fert" required>
+                </div>
+                <div>
+                    <label>Last Irrigation (days ago)</label>
+                    <input type="number" name="last_irrigation" required>
+                </div>
+            </div>
+
+            <label>Previous Crop</label>
+            <input type="text" name="prev_crop" placeholder="Enter previous crop" required>
+
+            <button type="submit">🚀 Get Recommendation</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
